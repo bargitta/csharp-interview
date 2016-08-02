@@ -20,7 +20,7 @@ but you cannot afford a 40-cent-candy.
 
 The correct way to do it is to use decimal
 ```csharp
-var funds = 1.00m;
+var funds = 1.00m; //funds and price are decimal
 var itemsBought = 0;
 for (var price = .1m; funds >= price; price += .1m)
 {
