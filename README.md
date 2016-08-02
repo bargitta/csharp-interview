@@ -29,3 +29,4 @@ for (var price = .1m; funds >= price; price += .1m)
 }
 Console.WriteLine(itemsBought);
 ```
+## When do you use reflection
