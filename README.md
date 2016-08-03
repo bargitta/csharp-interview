@@ -29,4 +29,12 @@ for (var price = .1m; funds >= price; price += .1m)
 }
 Console.WriteLine(itemsBought);
 ```
-## When do you use reflection
+## When do you use reflection?
+
+Normally, interface is preferred than reflection.
+Using reflection, you lose the compile-time type checking, have 
+verbose coding statement and performance suffers.
+
+In some situations, reflection is inevitable, like remote procedure call,
+class browser, code analysis tool, registration service, etc.
+
