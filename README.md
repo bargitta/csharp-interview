@@ -99,3 +99,9 @@ Action<String> action = Console.WriteLine;
 Predicate<int> predicate = (x) => { return x > 0; };
 
 ``` 
+## What's Event? EventHandler? ##
+Event is a wrapper of delegate, or a syntatic sugar of delegate.
+EventHandler is a special delegate, also EventHandler<T> provide a way to customize EventArgs.
+```csharp
+public delegate void EventHandler(object sender, EventArgs e)
+```
