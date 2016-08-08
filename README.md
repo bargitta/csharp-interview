@@ -74,12 +74,13 @@ verbose coding statement and performance suffers.
 In some situations, reflection is inevitable, like remote procedure call,
 class browser, code analysis tool, registration service, etc.
 
-## What's delegate? Any difference between Func, Action and Predicate ##
+## What's delegate? Any difference among Func, Action and Predicate ##
 
 Delegate is like function pointer in C++, and this pointer specifies the function signature.
-Func delegate allows from 0 to 8 inputs, and one return type. If your delegate returns 
+Func, Action and Predicate are all delegates. Func allows from 0 to 8 input parameters, 
+and one return type. If your delegate returns 
 nothing, you'll use Action.
-Predicate delegate allows one input parameter, and bool as return type. You can view it as a special Func.
+Predicate has one input parameter, and bool as return type. You can view it as a special Func.
 
 ```csharp
 public delegate TResult Func<in T1, in T2, out TResult>(T1 arg1,T2 arg2)
@@ -100,8 +101,8 @@ Predicate<int> predicate = (x) => { return x > 0; };
 
 ``` 
 ## What's Event? EventHandler? ##
-Event is a wrapper of delegate, or a syntatic sugar of delegate.
-EventHandler is a special delegate, also EventHandler<T> provide a way to customize EventArgs.
+Event is a wrapper of delegate, and you can see it as a syntatic sugar of delegate.
+EventHandler is a delegate, and EventHandler<T> provide a way to customize EventArgs.
 ```csharp
 public delegate void EventHandler(object sender, EventArgs e)
 ```
