@@ -74,4 +74,28 @@ verbose coding statement and performance suffers.
 In some situations, reflection is inevitable, like remote procedure call,
 class browser, code analysis tool, registration service, etc.
 
-## The difference between Func, Action and Predicate. Can Predicate be replaced? Why we need Func and Action? Can Action be replaced?
+## What's delegate? Any difference between Func, Action and Predicate ##
+
+Delegate is like function pointer in C++, and this pointer specifies the function signature.
+Func delegate allows from 0 to 8 inputs, and one return type. If your delegate returns 
+nothing, you'll use Action.
+Predicate delegate allows one input parameter, and bool as return type. You can view it as a special Func.
+
+```csharp
+public delegate TResult Func<in T1, in T2, out TResult>(T1 arg1,T2 arg2)
+
+public delegate bool Predicate<in T>(T obj)
+
+public delegate void Action<in T>(T obj)
+```
+
+```csharp
+//return a string without any parameter
+Func<string> func = () => "hello"; 
+
+//one string parameter, no return value
+Action<String> action = Console.WriteLine; 
+
+Predicate<int> predicate = (x) => { return x > 0; };
+
+``` 
